@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Birthday Message</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            background-image: linear-gradient(to right, #ffecd2, #fcb69f);
+        }
+        .message, .game {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            max-width: 80%;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .message.active, .game.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .message p {
+            color: #333;
+            font-size: 1.2em;
+        }
+        .game h3 {
+            color: #f06292;
+            font-size: 1.8em;
+        }
+        .game button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #f06292;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .game button:hover {
+            background-color: #ec407a;
+        }
+        .game button:focus {
+            outline: none;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <!-- Part 1 of the Message -->
+    <div class="message active" id="message1">
+        <p>Hi per, Happy birthday peraam🤩🥰🥳🫂. Enaku therinju namma 8th la irundhe bestfrnds. It is nearly 8 years of friendship. indha friendship ipudi life fulla continue aaganum nu kadavul kitta vendikiren😇. onake theriyum enaku yaarum 8th varaikum true friend da irundha dhu illa nu you are the person really true friend to me. 8th varaikum enaku lam friend irupangala nu nenaciruken but nee vandha kapuram dhan neraiya sandhosam kedachu chu.</p>
+        <button onclick="startGame1()">Inga touch panunga</button>
+    </div>
+
+    <!-- Game 1 -->
+    <div class="game" id="game1">
+        <h3>Naa sonnathu nyaabgam iruka </h3>
+        <button onclick="checkGame1(true)">Box 1</button>
+        <button onclick="checkGame1(false)">Box 2</button>
+        <button onclick="checkGame1(false)">Box 3</button>
+    </div>
+
+    <!-- Part 2 of the Message -->
+    <div class="message" id="message2">
+        <p>idhu varaikum nee ennaiya thittu nadhu illa naa num andha alavuku namma lukulla nadandhadhu illa nu naa nenaikiren. namma loda indha understanding ipudiye continue aaganum peraam. onaku nyabagam irukanu theriyala 10th last day adhavadhu covid lock down namaluku theriyama school vittu pona appo namma rendu perrukkum first and last ta sanda. nee enkooda sanda potalum nee school la vittu pogum podhu nee paapanu nenachen but paakala.</p>
+        <button onclick="startGame2()">Touch karo</button>
+    </div>
+
+    <!-- Game 2 -->
+    <div class="game" id="game2">
+        <h3>paarahh</h3>
+        <p>Naa sonnatha vachu ulla vanthuta pola</p>
+        <div id="cards">
+            <button onclick="checkGame2(1)">Card 1</button>
+            <button onclick="checkGame2(2)">Card 2</button>
+            <button onclick="checkGame2(3)">Card 3</button>
+            <button onclick="checkGame2(4)">Card 4</button>
+        </div>
+    </div>
+
+    <!-- Part 3 of the Message -->
+    <div class="message" id="message3">
+        <p>andha sanda enn vandhu dhu nu onake theriyum but nee kadaisila paapanu nenachen nee paakala. but naa nenachu kooda paakala next day lock down subject visayama doubt ketta appo nee endha ego vum illa ma msg panna. andha nerathula enaku enna thonuchuna namalukum sanda potalum friend du nu oruthar irukanga pa nu thonuchu. indha visayatha ennala maraca mudiyadhu. adhuve namma loda first and last sanda. nee epudi ennaiya purinju vechu irukiyo adhe maadhiri naa num purinju vechu iruken nu namburen. so finally many many more happy returns of the bubbly baby😅🤩🤩🥳🥳🥳🥳. sry naa ippo idhula indha per ra sonna dhuku onaku pudikadhu nu theriyum but inga idha pathivu panna num nu thonuchu per yaarukum theriyadhu but nalla irukum ipudi sonna onnaiya so happy birthday peraam🥳🥳🥳🥳🫂🫂 stay long live always be happy and your dreams come true including all dreams. idhula edhachum thappa irudha mannikavum🙇‍♀🥹🫂😍😍😍😍❤❤❤♥♥♥💓💓💓💓
+        <div>
+            <a href="friends.html" class="button">Back to Friends' Messages</a>
+        </div>
+           
+
+
+
+
+        </p>
+    </div>
+
+    <script>
+        function startGame1() {
+            document.getElementById('message1').classList.remove('active');
+            document.getElementById('game1').classList.add('active');
+        }
+
+        function checkGame1(isCorrect) {
+            if (isCorrect) {
+                document.getElementById('game1').classList.remove('active');
+                document.getElementById('message2').classList.add('active');
+            } else {
+                alert('Website open panrathuku munnadi onnu sonene');
+            }
+        }
+
+        function startGame2() {
+            document.getElementById('message2').classList.remove('active');
+            document.getElementById('game2').classList.add('active');
+        }
+
+        function checkGame2(card) {
+            const correctCard = 3; // Assume card 3 is the correct match
+            if (card === correctCard) {
+                document.getElementById('game2').classList.remove('active');
+                document.getElementById('message3').classList.add('active');
+            } else {
+                alert('Mental naa sonnatha nalla yosi');
+            }
+        }
+    </script>
+</body>
+</html>
