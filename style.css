@@ -49,25 +49,43 @@ header h1 {
     border-radius: 10px;
     border: 2px solid #ff69b4;
 }
-
 footer {
     margin-top: 30px;
 }
 
-.button {
+footer .button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #fff;
     background-color: #ff69b4;
-    border: none;
-    border-radius: 5px;
     text-decoration: none;
+    border-radius: 5px;
+    margin: 10px; /* Add margin to create space around buttons */
+    transition: background-color 0.3s ease;
 }
 
-.button:hover {
+footer .button:hover {
     background-color: #ff1493;
 }
+
+/* Ensure buttons outside of footer are styled similarly */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff69b4;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px; /* Add margin to create space around buttons */
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #ff1493;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #fbc2eb, #a6c0fe);
