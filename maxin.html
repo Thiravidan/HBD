@@ -83,10 +83,9 @@
 
     <!-- Game 1 -->
     <div class="game" id="game1">
-        <h3>Naa sonnathu nyaabgam iruka </h3>
-        <button onclick="checkGame1(true)">Box 1</button>
-        <button onclick="checkGame1(false)">Box 2</button>
-        <button onclick="checkGame1(false)">Box 3</button>
+        <h3>Namaku last sandai entha class la?? </h3>
+        <input type="text" id="answer1" placeholder="Enter your answer">
+        <button onclick="checkGame1()">Submit</button>
     </div>
 
     <!-- Part 2 of the Message -->
@@ -97,28 +96,19 @@
 
     <!-- Game 2 -->
     <div class="game" id="game2">
-        <h3>paarahh</h3>
-        <p>Naa sonnatha vachu ulla vanthuta pola</p>
-        <div id="cards">
-            <button onclick="checkGame2(1)">Card 1</button>
-            <button onclick="checkGame2(2)">Card 2</button>
-            <button onclick="checkGame2(3)">Card 3</button>
-            <button onclick="checkGame2(4)">Card 4</button>
-        </div>
+        <h3>Adutha kelvi</h3>
+        <p>Un nickname Enna ippo "idhula indha per ra sonna dhuku onaku pudikadhu nu theriyum" </p>
+        <input type="text" id="answer2" placeholder="Enter your answer">
+        <button onclick="checkGame2()">Submit</button>
     </div>
 
     <!-- Part 3 of the Message -->
     <div class="message" id="message3">
         <p>andha sanda enn vandhu dhu nu onake theriyum but nee kadaisila paapanu nenachen nee paakala. but naa nenachu kooda paakala next day lock down subject visayama doubt ketta appo nee endha ego vum illa ma msg panna. andha nerathula enaku enna thonuchuna namalukum sanda potalum friend du nu oruthar irukanga pa nu thonuchu. indha visayatha ennala maraca mudiyadhu. adhuve namma loda first and last sanda. nee epudi ennaiya purinju vechu irukiyo adhe maadhiri naa num purinju vechu iruken nu namburen. so finally many many more happy returns of the bubbly baby😅🤩🤩🥳🥳🥳🥳. sry naa ippo idhula indha per ra sonna dhuku onaku pudikadhu nu theriyum but inga idha pathivu panna num nu thonuchu per yaarukum theriyadhu but nalla irukum ipudi sonna onnaiya so happy birthday peraam🥳🥳🥳🥳🫂🫂 stay long live always be happy and your dreams come true including all dreams. idhula edhachum thappa irudha mannikavum🙇‍♀🥹🫂😍😍😍😍❤❤❤♥♥♥💓💓💓💓
+        </p>
         <div>
             <a href="friends.html" class="button">Back to Friends' Messages</a>
         </div>
-           
-
-
-
-
-        </p>
     </div>
 
     <script>
@@ -127,29 +117,34 @@
             document.getElementById('game1').classList.add('active');
         }
 
-        function checkGame1(isCorrect) {
-            if (isCorrect) {
+        function checkGame1() {
+            const userAnswer = document.getElementById('answer1').value.toLowerCase().trim();
+            const correctAnswers = ['10','tenth','10th','tenth standard','10th standard']; // Add all possible correct answers here
+            if (correctAnswers.includes(userAnswer)) {
                 document.getElementById('game1').classList.remove('active');
                 document.getElementById('message2').classList.add('active');
             } else {
-                alert('Website open panrathuku munnadi onnu sonene');
+                alert('Mental first and last sandayam nalla yosi enta kooda sonna ');
             }
         }
+        
 
         function startGame2() {
             document.getElementById('message2').classList.remove('active');
             document.getElementById('game2').classList.add('active');
         }
 
-        function checkGame2(card) {
-            const correctCard = 3; // Assume card 3 is the correct match
-            if (card === correctCard) {
+        function checkGame2() {
+            const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+            const correctAnswers = ['bubbly baby','bubly baby','bublybaby','bubblybaby',]; // Add all possible correct answers here
+            if (correctAnswers.includes(userAnswer)) {
                 document.getElementById('game2').classList.remove('active');
                 document.getElementById('message3').classList.add('active');
             } else {
-                alert('Mental naa sonnatha nalla yosi');
+                alert('Sorry, that’s not correct. Try again!');
             }
         }
+        
     </script>
 </body>
 </html>
